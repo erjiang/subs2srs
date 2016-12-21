@@ -102,7 +102,7 @@
     <Compile Include="DialogPref.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DialogPref.designer.cs">
+    <Compile Include="DialogPref.Designer.cs">
       <DependentUpon>DialogPref.cs</DependentUpon>
     </Compile>
     <Compile Include="DialogSelectMkvTrack.cs">
@@ -182,7 +182,7 @@
     <Compile Include="DialogProgress.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DialogProgress.designer.cs">
+    <Compile Include="DialogProgress.Designer.cs">
       <DependentUpon>DialogProgress.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
