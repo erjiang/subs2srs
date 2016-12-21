@@ -1,4 +1,4 @@
-﻿namespace subs2srs
+namespace subs2srs
 {
   partial class DialogSelectMkvTrack
   {
@@ -97,7 +97,7 @@
       // 
       this.AcceptButton = this.buttonExtract;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.ClientSize = new System.Drawing.Size(288, 126);
       this.Controls.Add(this.progressBarMain);
       this.Controls.Add(this.labelProgress);
