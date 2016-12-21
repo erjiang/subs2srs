@@ -20,4 +20,8 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <StartArguments>G:\Temp\subs2srs\_s2s\Clannad_1ep_ep01_b30.0.s2s</StartArguments>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <StartAction>Project</StartAction>
+    <StartArguments></StartArguments>
+  </PropertyGroup>
 </Project>

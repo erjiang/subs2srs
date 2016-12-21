@@ -1,4 +1,4 @@
-﻿namespace subs2srs
+namespace subs2srs
 {
   partial class DialogDuelingSubtitles
   {
