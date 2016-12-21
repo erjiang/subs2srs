@@ -1,0 +1,332 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{12F67E96-29B1-41A4-B446-5FE09FE0D77C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>subs2srs</RootNamespace>
+    <AssemblyName>subs2srs</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <ApplicationIcon>Resources\Icon.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MonoDebug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\MonoDebug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;MONO</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'MonoRelease|AnyCPU' ">
+    <OutputPath>bin\MonoRelease\</OutputPath>
+    <DefineConstants>TRACE;MONO</DefineConstants>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="taglib-sharp, Version=2.0.3.3, Culture=neutral, PublicKeyToken=db62eba44689b5b0, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DialogMkvExtract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogMkvExtract.Designer.cs">
+      <DependentUpon>DialogMkvExtract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogPref.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogPref.designer.cs">
+      <DependentUpon>DialogPref.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogSelectMkvTrack.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogSelectMkvTrack.Designer.cs">
+      <DependentUpon>DialogSelectMkvTrack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoFFmpegProgress.cs" />
+    <Compile Include="DialogAdvancedSubtitleOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogAdvancedSubtitleOptions.Designer.cs">
+      <DependentUpon>DialogAdvancedSubtitleOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogDuelingSubtitles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogDuelingSubtitles.Designer.cs">
+      <DependentUpon>DialogDuelingSubtitles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogPreview.Designer.cs">
+      <DependentUpon>DialogPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogPreviewSnapshot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogPreviewSnapshot.Designer.cs">
+      <DependentUpon>DialogPreviewSnapshot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogVideoDimensionsChooser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogVideoDimensionsChooser.Designer.cs">
+      <DependentUpon>DialogVideoDimensionsChooser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogSubtitleStyle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogSubtitleStyle.Designer.cs">
+      <DependentUpon>DialogSubtitleStyle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InfoEncoding.cs" />
+    <Compile Include="InfoStream.cs" />
+    <Compile Include="InfoStyle.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="ObjectCloner.cs" />
+    <Compile Include="PropertyBag.cs" />
+    <Compile Include="PrefIO.cs" />
+    <Compile Include="SubsParserLyrics.cs" />
+    <Compile Include="SubsParserTranscriber.cs" />
+    <Compile Include="UtilsMkv.cs" />
+    <Compile Include="UtilsName.cs" />
+    <Compile Include="UtilsAudio.cs" />
+    <Compile Include="UtilsCommon.cs" />
+    <Compile Include="UtilsSnapshot.cs" />
+    <Compile Include="UtilsVideo.cs" />
+    <Compile Include="WorkerSrs.cs" />
+    <Compile Include="UtilsAssembly.cs" />
+    <Compile Include="WorkerAudio.cs" />
+    <Compile Include="InfoCombined.cs" />
+    <Compile Include="DialogAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogAbout.Designer.cs">
+      <DependentUpon>DialogAbout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogExtractAudioFromMedia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogExtractAudioFromMedia.Designer.cs">
+      <DependentUpon>DialogExtractAudioFromMedia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogProgress.designer.cs">
+      <DependentUpon>DialogProgress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GroupBoxCheck.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GroupBoxCheck.Designer.cs">
+      <DependentUpon>GroupBoxCheck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UtilsLang.cs" />
+    <Compile Include="InfoLine.cs" />
+    <Compile Include="UtilsMsg.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DialogAdvancedSubtitleOptions.resx">
+      <DependentUpon>DialogAdvancedSubtitleOptions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogAbout.resx">
+      <DependentUpon>DialogAbout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogExtractAudioFromMedia.resx">
+      <DependentUpon>DialogExtractAudioFromMedia.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogDuelingSubtitles.resx">
+      <DependentUpon>DialogDuelingSubtitles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogMkvExtract.resx">
+      <DependentUpon>DialogMkvExtract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogPref.resx">
+      <DependentUpon>DialogPref.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogPreview.resx">
+      <DependentUpon>DialogPreview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogProgress.resx">
+      <DependentUpon>DialogProgress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogPreviewSnapshot.resx">
+      <DependentUpon>DialogPreviewSnapshot.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogSelectMkvTrack.resx">
+      <DependentUpon>DialogSelectMkvTrack.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogVideoDimensionsChooser.resx">
+      <DependentUpon>DialogVideoDimensionsChooser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogSubtitleStyle.resx">
+      <DependentUpon>DialogSubtitleStyle.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GroupBoxCheck.resx">
+      <DependentUpon>GroupBoxCheck.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="SubsParser.cs" />
+    <Compile Include="SubsParserASS.cs" />
+    <Compile Include="SubsParserSRT.cs" />
+    <Compile Include="SubsParserVOBSUB.cs" />
+    <Compile Include="SubsProcessor.cs" />
+    <Compile Include="UtilsSubs.cs" />
+    <Compile Include="WorkerSubs.cs" />
+    <Compile Include="SubtitleCreator\SubtitleCreatorMemWriter.cs" />
+    <Compile Include="SubtitleCreator\SubtitleCreatorSUP.cs" />
+    <Compile Include="WorkerSnapshot.cs" />
+    <Compile Include="WorkerVideo.cs" />
+    <Compile Include="WorkerVars.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\About.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Art\About.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
