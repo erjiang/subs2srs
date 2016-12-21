@@ -237,7 +237,7 @@ namespace subs2srs
       // DialogMkvExtract
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-      //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.buttonCancel;
       this.ClientSize = new System.Drawing.Size(564, 259);
       this.Controls.Add(this.progressBarTrack);

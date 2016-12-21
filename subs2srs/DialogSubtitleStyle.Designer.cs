@@ -1,4 +1,4 @@
-namespace subs2srs
+﻿namespace subs2srs
 {
   partial class DialogSubtitleStyle
   {
@@ -925,7 +925,7 @@ namespace subs2srs
       // 
       this.AcceptButton = this.buttonOK;
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-      //this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+      this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.buttonCancel;
       this.ClientSize = new System.Drawing.Size(622, 268);
       this.Controls.Add(this.groupBoxMisc);
