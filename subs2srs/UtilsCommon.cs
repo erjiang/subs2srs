@@ -321,7 +321,7 @@ namespace subs2srs
 
         if (!oldPath.Contains(dir))
         {
-          string newPath = oldPath + ";" + dir;
+          string newPath = oldPath + Path.PathSeparator + dir;
           Environment.SetEnvironmentVariable("Path", newPath);
         }
 
@@ -368,7 +368,7 @@ namespace subs2srs
 
         if (!oldPath.Contains(dir))
         {
-          string newPath = oldPath + ";" + dir;
+          string newPath = oldPath + Path.PathSeparator + dir;
           Environment.SetEnvironmentVariable("Path", newPath);
         }
 
@@ -516,7 +516,7 @@ namespace subs2srs
 
           if (!oldPath.Contains(ffmpegDir))
           {
-            string newPath = oldPath + ";" + ffmpegDir;
+            string newPath = oldPath + Path.PathSeparator + ffmpegDir;
             Environment.SetEnvironmentVariable("Path", newPath);
           }
 
@@ -643,7 +643,7 @@ namespace subs2srs
 
         if (!oldPath.Contains(ffmpegDir))
         {
-          string newPath = oldPath + ";" + ffmpegDir;
+          string newPath = oldPath + Path.PathSeparator + ffmpegDir;
           Environment.SetEnvironmentVariable("Path", newPath);
         }
 
