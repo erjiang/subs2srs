@@ -63,7 +63,7 @@ namespace subs2srs
       }
 
       string args = String.Format("\"{0}\"", mkvFile);
-      string mkvIinfo = UtilsCommon.startProcessAndGetStdout(ConstantSettings.PathMkvInfoExeRel, ConstantSettings.PathMkvInfoExeFull, args);
+      string mkvIinfo = UtilsCommon.startProcessAndGetStdout(ConstantSettings.ExeMkvInfo, ConstantSettings.PathMkvInfoExeFull, args);
 
       if (mkvIinfo == "Error.")
       {
@@ -357,7 +357,7 @@ namespace subs2srs
     {
       string args = String.Format("tracks \"{0}\" {1}:\"{2}\"", mkvFile, trackID, outName);
 
-      UtilsCommon.startProcess(ConstantSettings.PathMkvExtractExeRel, ConstantSettings.PathMkvExtractExeFull, args);
+      UtilsCommon.startProcess(ConstantSettings.ExeMkvExtract, ConstantSettings.PathMkvExtractExeFull, args);
     }
   }
 

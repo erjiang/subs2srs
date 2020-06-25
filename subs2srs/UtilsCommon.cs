@@ -291,6 +291,23 @@ namespace subs2srs
       return stdOutText;
     }
 
+    static private string getEnvironmentPath()
+    {
+      if (Environment.GetEnvironmentVariable("PATH") != null) {
+        return Environment.GetEnvironmentVariable("PATH");
+      } else {
+        return Environment.GetEnvironmentVariable("Path");
+      }
+    }
+
+    static private void setEnvironmentPath(string newPath)
+    {
+      if (Environment.GetEnvironmentVariable("PATH") != null) {
+        Environment.SetEnvironmentVariable("PATH", newPath);
+      } else {
+        Environment.SetEnvironmentVariable("Path", newPath);
+      }
+    }
 
     /// <summary>
     /// Call an exe with the provided arguments.
@@ -316,13 +333,13 @@ namespace subs2srs
       // Try setting PATH to include the absolute path of exe
       if (!status)
       {
-        string oldPath = Environment.GetEnvironmentVariable("Path");
+        string oldPath = getEnvironmentPath();
         string dir = Path.GetDirectoryName(fullExePath);
 
         if (!oldPath.Contains(dir))
         {
           string newPath = oldPath + Path.PathSeparator + dir;
-          Environment.SetEnvironmentVariable("Path", newPath);
+          setEnvironmentPath(newPath);
         }
 
         status = callExe(Path.GetFileName(fullExePath), args, useShellExecute, createNoWindow);
@@ -363,13 +380,13 @@ namespace subs2srs
       // Try setting PATH to include the absolute path of exe
       if (stdOutText == "Error.")
       {
-        string oldPath = Environment.GetEnvironmentVariable("Path");
+        string oldPath = getEnvironmentPath();
         string dir = Path.GetDirectoryName(fullExePath);
 
         if (!oldPath.Contains(dir))
         {
           string newPath = oldPath + Path.PathSeparator + dir;
-          Environment.SetEnvironmentVariable("Path", newPath);
+          setEnvironmentPath(newPath);
         }
 
         stdOutText = callExeAndGetStdout(Path.GetFileName(fullExePath), args, false, true);
@@ -511,13 +528,13 @@ namespace subs2srs
       {
         try
         {
-          string oldPath = Environment.GetEnvironmentVariable("Path");
+          string oldPath = getEnvironmentPath();
           string ffmpegDir = Path.GetDirectoryName(ConstantSettings.PathFFmpegFullExe);
 
           if (!oldPath.Contains(ffmpegDir))
           {
             string newPath = oldPath + Path.PathSeparator + ffmpegDir;
-            Environment.SetEnvironmentVariable("Path", newPath);
+            setEnvironmentPath(newPath);
           }
 
           ffmpegProcess = new Process();
@@ -638,7 +655,7 @@ namespace subs2srs
       // Try setting PATH to include the absolute path of ffmpeg.exe
       if (tryAgain)
       {
-        string oldPath = Environment.GetEnvironmentVariable("Path");
+        string oldPath = getEnvironmentPath();
         string ffmpegDir = Path.GetDirectoryName(ConstantSettings.PathFFmpegFullExe);
 
         if (!oldPath.Contains(ffmpegDir))
