@@ -500,14 +500,19 @@ namespace subs2srs
         bw.RunWorkerAsync(workerVars);
 
         // Lock up the UI with this modal progress form
-        dialogProgress.ShowDialog();
-        dialogProgress = null;
+        // TODO: for some reason, on Mono/Linux the parent dialog is not
+        // re-enabled after the child modal goes away, leaving the form
+        // permanently grayed out. So as a workaround, we use Show() instead of
+        // ShowDialog()
+        //dialogProgress.ShowDialog();
+        dialogProgress.Show();
+        //dialogProgress = null;
       }
       catch (Exception e1)
       {
         UtilsMsg.showErrMsg("Something went wrong before preview could be generated.\n" + e1);
         return;
-      }      
+      }
     }
 
 
