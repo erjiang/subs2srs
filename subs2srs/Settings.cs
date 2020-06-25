@@ -128,33 +128,37 @@ namespace subs2srs
 
   public static class ConstantSettings
   {
+    //private static string binaryExt = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? ".exe" : "";
+    private static string binaryExt = ""; // = ".exe" on Windows
     private static string saveExt = "s2s";
     private static string helpPage = "http://subs2srs.sourceforge.net/";
     private static string logDir = UtilsCommon.getAppDir(true) + "Logs" + Path.DirectorySeparatorChar;
     private static int maxLogFiles = 10;
-    private static string exeFFmpeg = @"ffmpeg.exe";
-    private static string pathFFmpeg = Path.Combine("Utils", "ffmpeg");
+    private static string exeFFmpeg = "ffmpeg" + binaryExt;
+    private static string pathFFmpeg = Path.Combine("Utils", exeFFmpeg);
     private static string pathFFmpegExe = pathFFmpeg + Path.DirectorySeparatorChar + exeFFmpeg;
     private static string pathFFmpegFull =  UtilsCommon.getAppDir(true) + pathFFmpeg;
     private static string pathFFmpegFullExe = Path.Combine(pathFFmpegFull, exeFFmpeg);
     private static string pathFFmpegPresetsFull = Path.Combine(pathFFmpegFull, "presets");
     private static string tempImageFilename = String.Format("~subs2srs_temp_{0}.jpg", Guid.NewGuid().ToString());
-    private static string tempVideoFilename = String.Format("~subs2srs_temp_{0}", Guid.NewGuid().ToString()); // Extension decided by worker  
+    private static string tempVideoFilename = String.Format("~subs2srs_temp_{0}", Guid.NewGuid().ToString()); // Extension decided by worker
     private static string tempAudioFilename = String.Format("~subs2srs_temp_{0}.mp3", Guid.NewGuid().ToString());
     private static string tempAudioPreviewFilename = String.Format("~subs2srs_temp_{0}.wav", Guid.NewGuid().ToString());
     private static string tempPreviewDirName = String.Format("~subs2srs_preview_{0}", Guid.NewGuid().ToString());
-    private static string tempMkvExtractSubs1Filename = String.Format("~subs2srs_mkv_extract_subs1_{0}", Guid.NewGuid().ToString()); // Extension decided by worker  
-    private static string tempMkvExtractSubs2Filename = String.Format("~subs2srs_mkv_extract_subs2_{0}", Guid.NewGuid().ToString()); // Extension decided by worker  
-    private static string normalizeAudioExe = "mp3gain.exe";
+    private static string tempMkvExtractSubs1Filename = String.Format("~subs2srs_mkv_extract_subs1_{0}", Guid.NewGuid().ToString()); // Extension decided by worker
+    private static string tempMkvExtractSubs2Filename = String.Format("~subs2srs_mkv_extract_subs2_{0}", Guid.NewGuid().ToString()); // Extension decided by worker
+    private static string normalizeAudioExe = "mp3gain" + binaryExt;
     private static string pathNormalizeAudioExeRel = String.Format("Utils{0}mp3gain{0}{1}", Path.DirectorySeparatorChar, normalizeAudioExe);
     private static string pathNormalizeAudioExeFull = String.Format("{0}{1}", UtilsCommon.getAppDir(true), pathNormalizeAudioExeRel);
     private static string pathSubsReTimerFull = String.Format("{0}Utils{1}SubsReTimer{1}SubsReTimer.exe", UtilsCommon.getAppDir(true), Path.DirectorySeparatorChar);
     private static string pathMkvDirRel = String.Format("Utils{0}mkvtoolnix{0}", Path.DirectorySeparatorChar);
     private static string pathMkvDirFull = String.Format("{0}Utils{1}mkvtoolnix{1}", UtilsCommon.getAppDir(true), Path.DirectorySeparatorChar);
-    private static string pathMkvInfoExeRel = pathMkvDirRel + "mkvinfo.exe";
-    private static string pathMkvInfoExeFull = pathMkvDirFull + "mkvinfo.exe";
-    private static string pathMkvExtractExeRel = pathMkvDirRel + "mkvextract.exe";
-    private static string pathMkvExtractExeFull = pathMkvDirFull + "mkvextract.exe";
+    private static string exeMkvInfo = "mkvinfo" + binaryExt;
+    private static string pathMkvInfoExeRel = pathMkvDirRel + exeMkvInfo;
+    private static string pathMkvInfoExeFull = pathMkvDirFull + exeMkvInfo;
+    private static string exeMkvExtract = "mkvextract" + binaryExt;
+    private static string pathMkvExtractExeRel = pathMkvDirRel + exeMkvExtract;
+    private static string pathMkvExtractExeFull = pathMkvDirFull + exeMkvExtract;
 
     // Preferences file stuff
     private static string settingsFilename = "preferences.txt";
@@ -352,6 +356,11 @@ namespace subs2srs
       get { return pathMkvDirFull; }
     }
 
+    public static string ExeMkvInfo
+    {
+      get { return exeMkvInfo; }
+    }
+
     public static string PathMkvInfoExeRel
     {
       get { return pathMkvInfoExeRel; }
@@ -360,6 +369,11 @@ namespace subs2srs
     public static string PathMkvInfoExeFull
     {
       get { return pathMkvInfoExeFull; }
+    }
+
+    public static string ExeMkvExtract
+    {
+      get { return exeMkvExtract; }
     }
 
     public static string PathMkvExtractExeRel
