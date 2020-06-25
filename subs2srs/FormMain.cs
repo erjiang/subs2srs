@@ -20,6 +20,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -47,6 +48,9 @@ namespace subs2srs
       dlgAdvSubs = new DialogAdvancedSubtitleOptions();
       dlgSnapshotDimensionsChooser = new DialogVideoDimensionsChooser(DialogVideoDimensionsChooser.VideoDimesionsChoooserType.Snapshot);
       dlgVideoClipDimensionsChooser = new DialogVideoDimensionsChooser(DialogVideoDimensionsChooser.VideoDimesionsChoooserType.Video);
+
+      Debug.Listeners.Add(new TextWriterTraceListener(Console.Out));
+      Debug.AutoFlush = true;
 
       this.initEncodingsDropdown();
     }
