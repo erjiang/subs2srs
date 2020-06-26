@@ -1047,7 +1047,13 @@ namespace subs2srs
       checkCommandLineArgs();
 
       // Intial focus/Where the cursor should appear on startup
-      this.ActiveControl = textBoxSubs1File;      
+      this.ActiveControl = textBoxSubs1File;
+
+      // handle non-96-dpi display by scaling main window based on 96-dpi design
+      // seems like most everything else handles high-DPI automatically
+      float myDpiX = this.CreateGraphics().DpiX;
+      float myDpiY = this.CreateGraphics().DpiY;
+      this.ClientSize = new System.Drawing.Size((int)(this.ClientSize.Width * myDpiX / 96), (int)(this.ClientSize.Height * myDpiY / 96));
     }
 
 
