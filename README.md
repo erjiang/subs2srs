@@ -9,8 +9,7 @@ To run on Linux, you will need to:
 * Install a recent-ish version of Mono. (Mono 4.x is known to do poorly with this program.)
 * Install "Microsoft Sans Serif" font.
 * Install various video tools. The binaries that this program can call are:
-  * mkvinfo
-  * mkvextract
+  * mkvinfo and mkvextract (part of mkvtoolnix)
   * ffmpeg
   * mp3gain
 
