@@ -291,22 +291,17 @@ namespace subs2srs
       return stdOutText;
     }
 
+    // Apparently environment variable names on Windows are case-insensitive, while
+    // they are case-sensitive on Unix-like systems. "PATH" is the preferred name,
+    // not "Path".
     static private string getEnvironmentPath()
     {
-      if (Environment.GetEnvironmentVariable("PATH") != null) {
-        return Environment.GetEnvironmentVariable("PATH");
-      } else {
-        return Environment.GetEnvironmentVariable("Path");
-      }
+      return Environment.GetEnvironmentVariable("PATH");
     }
 
     static private void setEnvironmentPath(string newPath)
     {
-      if (Environment.GetEnvironmentVariable("PATH") != null) {
-        Environment.SetEnvironmentVariable("PATH", newPath);
-      } else {
-        Environment.SetEnvironmentVariable("Path", newPath);
-      }
+      Environment.SetEnvironmentVariable("PATH", newPath);
     }
 
     /// <summary>
