@@ -337,11 +337,11 @@ namespace subs2srs
     {
       textBoxVideoFile.Text = showFileDialog(textBoxVideoFile.Text.Trim(),
         "All files (*.*)|*.*|" +
-        "All Common Video Files (*.avi;*.flv;*.mkv;*.mp4;*.ogm;*.vob)|*.avi;*.flv;*.mkv;*.mp4;*.ogm;*.vob|" +
+        "All Common Video Files (*.avi;*.flv;*.mkv;*.mp4;*.m4v;*.ogm;*.vob)|*.avi;*.flv;*.mkv;*.mp4;*.m4v;*.ogm;*.vob|" +
         "Audio Video Interleave (*.avi;)|*.avi|" +
         "Flash Video (*.flv)|*.flv|" +
         "Matroska Multimedia (*.mkv)|*.mkv|" +
-        "MPEG4 Video (*.mp4)|*.mp4|" +
+        "MPEG4 Video (*.mp4;*.m4v)|*.mp4;*.m4v|" +
         "OGG Media (*.ogm)|*.ogm|" +
         "DVD Video Object (*.vob)|*.vob", 2);
     }

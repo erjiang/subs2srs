@@ -269,13 +269,13 @@ namespace subs2srs
     {
       textBoxMediaFile.Text = showFileDialog(textBoxMediaFile.Text.Trim(),
         "All files (*.*)|*.*|" +
-        "All Common Video and Audio Files (*.avi;*.flv;*.mkv;*.mp4;*.ogm;*.vob;*.mp3;*.ogg;*.wav;*.aac;*.m4a;*.flac;*.wma)|*.avi;*.flv;*.mkv;*.mp4;*.ogm;*.vob;*.mp3;*.ogg;*.wav;*.aac;*.m4a;*.flac;*.wma|" +
-        "All Common Video Files (*.avi;*.flv;*.mkv;*.mp4;*.ogm;*.vob)|*.avi;*.flv;*.mkv;*.mp4;*.ogm;*.vob|" +
+        "All Common Video and Audio Files (*.avi;*.flv;*.mkv;*.mp4;*.m4v;*.ogm;*.vob;*.mp3;*.ogg;*.wav;*.aac;*.m4a;*.flac;*.wma)|*.avi;*.flv;*.mkv;*.mp4;*.m4v;*.ogm;*.vob;*.mp3;*.ogg;*.wav;*.aac;*.m4a;*.flac;*.wma|" +
+        "All Common Video Files (*.avi;*.flv;*.mkv;*.mp4;*.m4v;*.ogm;*.vob)|*.avi;*.flv;*.mkv;*.mp4;*.m4v;*.ogm;*.vob|" +
         "All Common Audio Files (*.aac;*.flac;*.m4a;*.mp3;*.ogg;*.wav;*.wma)|*.aac;*.flac;*.m4a;*.mp3;*.ogg;*.wav;*.wma|" +
         "Audio Video Interleave (*.avi;)|*.avi|" +
         "Flash Video (*.flv)|*.flv|" +
         "Matroska Multimedia (*.mkv)|*.mkv|" +
-        "MPEG4 Video (*.mp4)|*.mp4|" +
+        "MPEG4 Video (*.mp4;*.m4v)|*.mp4;*.m4v|" +
         "Ogg Multimedia (*.ogm)|*.ogm|" +
         "DVD Video Object (*.vob)|*.vob|" +
         "Advanced Audio Coding (*.aac)|*.aac|" +
