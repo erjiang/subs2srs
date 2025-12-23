@@ -19,3 +19,37 @@ Currently this is based off of v29.6 from Sourceforge, which was the latest
 version as of December 2016. There is a version v29.7 which seems to only
 include newer build of ffmpeg, but this version requires that you provide
 your own ffmpeg.
+
+Build
+-----
+Prerequisites (Debian/Ubuntu):
+
+- mono-complete (includes WinForms, libgdiplus, msbuild)
+- ffmpeg
+- mkvtoolnix (for mkvinfo/mkvextract)
+- mp3gain
+- Microsoft core fonts (for “Microsoft Sans Serif”)
+
+Example install:
+
+- sudo apt update
+- sudo apt install mono-complete ffmpeg mkvtoolnix mp3gain ttf-mscorefonts-installer
+
+Build with Mono (from repo root):
+
+- msbuild subs2srs.sln /p:Configuration=MonoRelease
+  - On older Mono: xbuild subs2srs.sln /p:Configuration=MonoRelease
+
+Artifacts:
+
+- subs2srs/bin/MonoRelease/subs2srs.exe
+
+Run
+---
+- mono subs2srs/bin/MonoRelease/subs2srs.exe
+
+Notes
+-----
+- You can also build a debug variant: msbuild subs2srs.sln /p:Configuration=MonoDebug
+- Ensure ffmpeg, mkvinfo, mkvextract, and mp3gain are in your PATH.
+- If UI rendering looks off, verify libgdiplus is present (installed with mono-complete) and run under X11.
