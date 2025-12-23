@@ -10,7 +10,7 @@ To run on Linux, you will need to:
 * Install "Microsoft Sans Serif" font.
 * Install various video tools. The binaries that this program can call are:
   * mkvinfo and mkvextract (part of mkvtoolnix)
-  * ffmpeg
+  * ffmpeg (includes ffplay, required for audio preview)
   * mp3gain
 
 Version
@@ -52,4 +52,5 @@ Notes
 -----
 - You can also build a debug variant: msbuild subs2srs.sln /p:Configuration=MonoDebug
 - Ensure ffmpeg, mkvinfo, mkvextract, and mp3gain are in your PATH.
+  - ffplay must be available in PATH for the Preview Audio feature.
 - If UI rendering looks off, verify libgdiplus is present (installed with mono-complete) and run under X11.

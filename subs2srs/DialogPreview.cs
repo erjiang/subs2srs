@@ -733,11 +733,27 @@ namespace subs2srs
 
       try
       {
-        // Play the audio using .Net's built-in audio player (only supports .wav)
         if (File.Exists(outWavFile))
         {
-          SoundPlayer player = new SoundPlayer(outWavFile);
-          player.Play();
+          // On Unix-like systems, use ffplay (from ffmpeg). On Windows, use SoundPlayer.
+          var platform = Environment.OSVersion.Platform;
+          bool isUnix = (platform == PlatformID.Unix || platform == PlatformID.MacOSX);
+          if (isUnix)
+          {
+            Process p = new Process();
+            p.StartInfo.FileName = "ffplay";
+            p.StartInfo.Arguments = String.Format("-nodisp -autoexit -loglevel quiet \"{0}\"", outWavFile);
+            p.StartInfo.UseShellExecute = false;
+            p.StartInfo.CreateNoWindow = true;
+            try { System.Console.Error.WriteLine(string.Format("Exec: {0} {1}", p.StartInfo.FileName, p.StartInfo.Arguments)); } catch {}
+            p.Start();
+          }
+          else
+          {
+            // Play the audio using .NET's built-in audio player (only supports .wav)
+            SoundPlayer player = new SoundPlayer(outWavFile);
+            player.Play();
+          }
         }
       }
       catch
